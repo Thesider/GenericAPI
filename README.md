@@ -1,6 +1,6 @@
-# Enhanced Generic API
+# Generic API
 
-A comprehensive, production-ready .NET 9 Web API featuring advanced security, monitoring, real-time communication, and enterprise-grade architecture patterns.
+A generic API system that have the below feature
 
 ## 🚀 Features
 
