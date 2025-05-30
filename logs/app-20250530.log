@@ -1,0 +1,435 @@
+2025-05-30 20:59:27.319 +07:00 [WRN]  Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-05-30 20:59:27.494 +07:00 [INF]  AUDIT_LOG: {"Id":"33c5d93b-a77a-47fe-acaa-50c5bbcbda60","UserId":"System","UserName":"","Action":"ApplicationStarted","EntityType":"","EntityId":"","OldValues":null,"NewValues":null,"Details":"Application has started successfully","IpAddress":"","UserAgent":"","Timestamp":"2025-05-30T13:59:27.4758704Z","Severity":"Information","Category":"SystemEvent","TenantId":null,"Hash":"yRyJp7TeQDXsk6pi\u002BvF9bCsK2Eenhj7vMiOIHlqsaa4=","CorrelationId":null}
+2025-05-30 20:59:27.495 +07:00 [INF]  Audit: ApplicationStarted by System on : - Application has started successfully
+2025-05-30 20:59:27.495 +07:00 [INF]  Application started successfully
+2025-05-30 20:59:27.522 +07:00 [INF]  User profile is available. Using 'C:\Users\Bar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-05-30 20:59:27.529 +07:00 [INF]  Initializing UI Database
+2025-05-30 20:59:27.559 +07:00 [ERR]  Hosting failed to start
+System.TypeLoadException: Method 'Clone' in type 'Microsoft.EntityFrameworkCore.InMemory.Storage.Internal.InMemoryTypeMapping' from assembly 'Microsoft.EntityFrameworkCore.InMemory, Version=7.0.9.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' does not have an implementation.
+   at Microsoft.EntityFrameworkCore.InMemory.Storage.Internal.InMemoryTypeMappingSource.FindMapping(TypeMappingInfo& mappingInfo)
+   at Microsoft.EntityFrameworkCore.Storage.TypeMappingSource.<>c.<FindMappingWithConversion>b__3_0(ValueTuple`4 k, TypeMappingSource self)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd[TArg](TKey key, Func`3 valueFactory, TArg factoryArgument)
+   at Microsoft.EntityFrameworkCore.Storage.TypeMappingSource.FindMappingWithConversion(TypeMappingInfo mappingInfo, Type providerClrType, ValueConverter customConverter)
+   at Microsoft.EntityFrameworkCore.Storage.TypeMappingSource.FindMapping(MemberInfo member, IModel model, Boolean useAttributes)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.MemberClassifier.IsCandidatePrimitiveProperty(MemberInfo memberInfo, IConventionModel model, Boolean useAttributes, CoreTypeMapping& typeMapping)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.PropertyDiscoveryConvention.IsCandidatePrimitiveProperty(MemberInfo memberInfo, IConventionTypeBase structuralType, CoreTypeMapping& mapping)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.PropertyDiscoveryConvention.DiscoverPrimitiveProperties(IConventionTypeBaseBuilder structuralTypeBuilder, IConventionContext context)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.PropertyDiscoveryConvention.ProcessEntityTypeAdded(IConventionEntityTypeBuilder entityTypeBuilder, IConventionContext`1 context)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ImmediateConventionScope.OnEntityTypeAdded(IConventionEntityTypeBuilder entityTypeBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.OnEntityTypeAddedNode.Run(ConventionDispatcher dispatcher)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.DelayedConventionScope.Run(ConventionDispatcher dispatcher)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ConventionBatch.Run()
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ConventionBatch.Dispose()
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ImmediateConventionScope.OnModelInitialized(IConventionModelBuilder modelBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ImmediateConventionScope.OnModelInitialized(IConventionModelBuilder modelBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.OnModelInitialized(IConventionModelBuilder modelBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.Model..ctor(ConventionSet conventions, ModelDependencies modelDependencies, ModelConfiguration modelConfiguration)
+   at Microsoft.EntityFrameworkCore.ModelBuilder..ctor(ConventionSet conventions, ModelDependencies modelDependencies, ModelConfiguration modelConfiguration)
+   at Microsoft.EntityFrameworkCore.ModelConfigurationBuilder.CreateModelBuilder(ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, IConventionSetBuilder conventionSetBuilder, ModelDependencies modelDependencies)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, ModelCreationDependencies modelCreationDependencies, Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, ModelCreationDependencies modelCreationDependencies, Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel(Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__8_4(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService(IInfrastructure`1 accessor, Type serviceType)
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService[TService](IInfrastructure`1 accessor)
+   at Microsoft.EntityFrameworkCore.Infrastructure.AccessorExtensions.GetService[TService](IInfrastructure`1 accessor)
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.get_ProviderName()
+   at Microsoft.EntityFrameworkCore.DatabaseFacadeExtensions.IsInMemory(DatabaseFacade database) in /_/src/HealthChecks.UI/Extensions/DatabaseFacadeExtensions.cs:line 11
+   at HealthChecks.UI.Core.HostedService.UIInitializationHostedService.ShouldMigrateDatabaseAsync(HealthChecksDb context) in /_/src/HealthChecks.UI/Core/HostedService/UIInitializationHostedService.cs:line 107
+   at HealthChecks.UI.Core.HostedService.UIInitializationHostedService.InitializeDatabaseAsync(IServiceProvider sp) in /_/src/HealthChecks.UI/Core/HostedService/UIInitializationHostedService.cs:line 48
+   at HealthChecks.UI.Core.HostedService.UIInitializationHostedService.StartAsync(CancellationToken cancellationToken) in /_/src/HealthChecks.UI/Core/HostedService/UIInitializationHostedService.cs:line 34
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__14_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2025-05-30 21:02:05.783 +07:00 [WRN]  Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-05-30 21:02:05.970 +07:00 [INF]  AUDIT_LOG: {"Id":"60d71dff-b091-4dfb-a5bd-09e667e1f192","UserId":"System","UserName":"","Action":"ApplicationStarted","EntityType":"","EntityId":"","OldValues":null,"NewValues":null,"Details":"Application has started successfully","IpAddress":"","UserAgent":"","Timestamp":"2025-05-30T14:02:05.9480576Z","Severity":"Information","Category":"SystemEvent","TenantId":null,"Hash":"P4JmdmaRlfn8TUr54yKDt\u002B7nHdU/yQDuomQ4Bf6SuiM=","CorrelationId":null}
+2025-05-30 21:02:05.971 +07:00 [INF]  Audit: ApplicationStarted by System on : - Application has started successfully
+2025-05-30 21:02:05.972 +07:00 [INF]  Application started successfully
+2025-05-30 21:02:05.996 +07:00 [INF]  User profile is available. Using 'C:\Users\Bar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-05-30 21:02:06.003 +07:00 [INF]  Initializing UI Database
+2025-05-30 21:02:06.088 +07:00 [INF]  Saving healthchecks configuration to database
+2025-05-30 21:02:06.315 +07:00 [INF]  Now listening on: http://localhost:5223
+2025-05-30 21:02:06.327 +07:00 [DBG]  Executing HealthCheck collector HostedService.
+2025-05-30 21:02:06.715 +07:00 [INF]  Start processing HTTP request GET http://localhost:5223/health
+2025-05-30 21:02:06.717 +07:00 [INF]  Sending HTTP request GET http://localhost:5223/health
+2025-05-30 21:02:06.716 +07:00 [INF] acb4c5d5-08b8-4755-8c7a-2c4ce09231d4 Request starting HTTP/1.1 GET http://localhost:5223/swagger/v1/swagger.json - null null
+2025-05-30 21:02:06.770 +07:00 [INF]  Application started. Press Ctrl+C to shut down.
+2025-05-30 21:02:06.770 +07:00 [INF]  Hosting environment: Development
+2025-05-30 21:02:06.770 +07:00 [INF]  Content root path: C:\Users\Bar\Desktop\PPJ\GenericAPI
+2025-05-30 21:02:06.797 +07:00 [INF] 5a8fde1a-efcf-480e-9cea-8211e010aacb Request starting HTTP/1.1 GET http://localhost:5223/health - null null
+2025-05-30 21:02:06.806 +07:00 [DBG] 5a8fde1a-efcf-480e-9cea-8211e010aacb Added CSP header: default-src 'self'; script-src 'self' 'nonce-mnT5WJKJWklx0FWbHJaMsg==' 'strict-dynamic'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https:; connect-src 'self'; media-src 'self'; object-src 'none'; child-src 'none'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; manifest-src 'self'; report-uri /api/security/csp-report;
+2025-05-30 21:02:06.807 +07:00 [WRN] 5a8fde1a-efcf-480e-9cea-8211e010aacb Failed to determine the https port for redirect.
+2025-05-30 21:02:06.914 +07:00 [DBG] 5a8fde1a-efcf-480e-9cea-8211e010aacb GetIdentifierAsync: No identifier found
+2025-05-30 21:02:06.919 +07:00 [INF] 5a8fde1a-efcf-480e-9cea-8211e010aacb Executing endpoint 'Health checks'
+2025-05-30 21:02:07.087 +07:00 [DBG] 5a8fde1a-efcf-480e-9cea-8211e010aacb Database health check passed
+2025-05-30 21:02:07.087 +07:00 [INF] acb4c5d5-08b8-4755-8c7a-2c4ce09231d4 Request finished HTTP/1.1 GET http://localhost:5223/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 373.556ms
+2025-05-30 21:02:07.362 +07:00 [DBG] 5a8fde1a-efcf-480e-9cea-8211e010aacb Redis health check passed - Ping: 0.8614ms
+2025-05-30 21:02:07.385 +07:00 [INF] 5a8fde1a-efcf-480e-9cea-8211e010aacb Executed endpoint 'Health checks'
+2025-05-30 21:02:07.389 +07:00 [INF]  Received HTTP response headers after 670.0923ms - 200
+2025-05-30 21:02:07.390 +07:00 [INF]  End processing HTTP request after 680.8103ms - 200
+2025-05-30 21:02:07.391 +07:00 [INF] 5a8fde1a-efcf-480e-9cea-8211e010aacb Request finished HTTP/1.1 GET http://localhost:5223/health - 200 null application/json; charset=utf-8 594.2221ms
+2025-05-30 21:02:07.414 +07:00 [ERR]  GetHealthReport threw an exception when trying to get report from /health configured with name API Health.
+System.Text.Json.JsonException: The JSON value could not be converted to HealthChecks.UI.Core.UIHealthReport. Path: $.totalDuration | LineNumber: 0 | BytePositionInLine: 431.
+ ---> System.InvalidOperationException: Cannot get the value of a token type 'Number' as a string.
+   at System.Text.Json.ThrowHelper.ThrowInvalidOperationException_ExpectedString(JsonTokenType tokenType)
+   at System.Text.Json.Serialization.Converters.TimeSpanConverter.Read(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.Converters.SmallObjectWithParameterizedConstructorConverter`5.TryRead[TArg](ReadStack& state, Utf8JsonReader& reader, JsonParameterInfo jsonParameterInfo, TArg& arg)
+   at System.Text.Json.Serialization.Converters.SmallObjectWithParameterizedConstructorConverter`5.ReadAndCacheConstructorArgument(ReadStack& state, Utf8JsonReader& reader, JsonParameterInfo jsonParameterInfo)
+   at System.Text.Json.Serialization.Converters.ObjectWithParameterizedConstructorConverter`1.ReadConstructorArgumentsWithContinuation(ReadStack& state, Utf8JsonReader& reader, JsonSerializerOptions options)
+   at System.Text.Json.Serialization.Converters.ObjectWithParameterizedConstructorConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   --- End of inner exception stack trace ---
+   at System.Text.Json.ThrowHelper.ReThrowWithPath(ReadStack& state, Utf8JsonReader& reader, Exception ex)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.ContinueDeserialize(ReadBufferState& bufferState, JsonReaderState& jsonReaderState, ReadStack& readStack, T& value)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.DeserializeAsync(Stream utf8Json, CancellationToken cancellationToken)
+   at System.Net.Http.Json.HttpContentJsonExtensions.ReadFromJsonAsyncCore[T](HttpContent content, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at HealthChecks.UI.Core.HostedService.HealthCheckReportCollector.GetHealthReportAsync(HealthCheckConfiguration configuration) in /_/src/HealthChecks.UI/Core/HostedService/HealthCheckReportCollector.cs:line 149
+2025-05-30 21:02:07.504 +07:00 [DBG]  HealthReportCollector - health report execution history saved.
+2025-05-30 21:02:07.538 +07:00 [DBG]  Creating a new HealthReport history.
+2025-05-30 21:02:07.584 +07:00 [DBG]  HealthReportCollector has completed.
+2025-05-30 21:02:07.585 +07:00 [DBG]  HealthCheck collector HostedService executed successfully.
+2025-05-30 21:02:10.634 +07:00 [INF] 024f4ba4-b5a9-4914-8157-489ab9dad7d4 Request starting HTTP/1.1 GET http://localhost:5223/api/Admin/dashboard - null null
+2025-05-30 21:02:10.636 +07:00 [DBG] 024f4ba4-b5a9-4914-8157-489ab9dad7d4 Added CSP header: default-src 'self'; script-src 'self' 'nonce-e1RiRGl8wGBkI73GDAmWKg==' 'strict-dynamic'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https:; connect-src 'self'; media-src 'self'; object-src 'none'; child-src 'none'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; manifest-src 'self'; report-uri /api/security/csp-report;
+2025-05-30 21:02:10.653 +07:00 [DBG] 024f4ba4-b5a9-4914-8157-489ab9dad7d4 GetIdentifierAsync: No identifier found
+2025-05-30 21:02:10.659 +07:00 [INF] 024f4ba4-b5a9-4914-8157-489ab9dad7d4 Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-05-30 21:02:10.664 +07:00 [INF] 024f4ba4-b5a9-4914-8157-489ab9dad7d4 AuthenticationScheme: Bearer was challenged.
+2025-05-30 21:02:10.667 +07:00 [INF] 024f4ba4-b5a9-4914-8157-489ab9dad7d4 Request finished HTTP/1.1 GET http://localhost:5223/api/Admin/dashboard - 401 0 null 32.4769ms
+2025-05-30 21:02:11.449 +07:00 [INF] 9670b3df-8b00-47c4-92ef-2b862983d047 Request starting HTTP/1.1 GET http://localhost:5223/api/Admin/dashboard - null null
+2025-05-30 21:02:11.451 +07:00 [DBG] 9670b3df-8b00-47c4-92ef-2b862983d047 Added CSP header: default-src 'self'; script-src 'self' 'nonce-4a+XADozwkOnGiT8Uwr3XQ==' 'strict-dynamic'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https:; connect-src 'self'; media-src 'self'; object-src 'none'; child-src 'none'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; manifest-src 'self'; report-uri /api/security/csp-report;
+2025-05-30 21:02:11.453 +07:00 [DBG] 9670b3df-8b00-47c4-92ef-2b862983d047 GetIdentifierAsync: No identifier found
+2025-05-30 21:02:11.455 +07:00 [INF] 9670b3df-8b00-47c4-92ef-2b862983d047 Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-05-30 21:02:11.455 +07:00 [INF] 9670b3df-8b00-47c4-92ef-2b862983d047 AuthenticationScheme: Bearer was challenged.
+2025-05-30 21:02:11.455 +07:00 [INF] 9670b3df-8b00-47c4-92ef-2b862983d047 Request finished HTTP/1.1 GET http://localhost:5223/api/Admin/dashboard - 401 0 null 5.746ms
+2025-05-30 21:02:20.590 +07:00 [INF] dc13780f-59ea-4c8d-a5e0-9b7976455f87 Request starting HTTP/1.1 POST http://localhost:5223/api/Product - application/json 109
+2025-05-30 21:02:20.591 +07:00 [DBG] dc13780f-59ea-4c8d-a5e0-9b7976455f87 Added CSP header: default-src 'self'; script-src 'self' 'nonce-MMU9vQ1zteKscocZxclF7g==' 'strict-dynamic'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https:; connect-src 'self'; media-src 'self'; object-src 'none'; child-src 'none'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; manifest-src 'self'; report-uri /api/security/csp-report;
+2025-05-30 21:02:20.592 +07:00 [INF] dc13780f-59ea-4c8d-a5e0-9b7976455f87 CORS policy execution failed.
+2025-05-30 21:02:20.593 +07:00 [INF] dc13780f-59ea-4c8d-a5e0-9b7976455f87 Request origin http://localhost:5223 does not have permission to access the resource.
+2025-05-30 21:02:20.595 +07:00 [DBG] dc13780f-59ea-4c8d-a5e0-9b7976455f87 GetIdentifierAsync: No identifier found
+2025-05-30 21:02:20.597 +07:00 [INF] dc13780f-59ea-4c8d-a5e0-9b7976455f87 Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-05-30 21:02:20.598 +07:00 [INF] dc13780f-59ea-4c8d-a5e0-9b7976455f87 AuthenticationScheme: Bearer was challenged.
+2025-05-30 21:02:20.599 +07:00 [INF] dc13780f-59ea-4c8d-a5e0-9b7976455f87 Request finished HTTP/1.1 POST http://localhost:5223/api/Product - 401 0 null 8.1771ms
+2025-05-30 21:02:21.786 +07:00 [INF] 710ece24-7684-433a-a801-9aa8e7403874 Request starting HTTP/1.1 POST http://localhost:5223/api/Product - application/json 109
+2025-05-30 21:02:21.787 +07:00 [DBG] 710ece24-7684-433a-a801-9aa8e7403874 Added CSP header: default-src 'self'; script-src 'self' 'nonce-IAxDaAxeecwJ378EW/3lLQ==' 'strict-dynamic'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https:; connect-src 'self'; media-src 'self'; object-src 'none'; child-src 'none'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; manifest-src 'self'; report-uri /api/security/csp-report;
+2025-05-30 21:02:21.787 +07:00 [INF] 710ece24-7684-433a-a801-9aa8e7403874 CORS policy execution failed.
+2025-05-30 21:02:21.787 +07:00 [INF] 710ece24-7684-433a-a801-9aa8e7403874 Request origin http://localhost:5223 does not have permission to access the resource.
+2025-05-30 21:02:21.788 +07:00 [DBG] 710ece24-7684-433a-a801-9aa8e7403874 GetIdentifierAsync: No identifier found
+2025-05-30 21:02:21.788 +07:00 [INF] 710ece24-7684-433a-a801-9aa8e7403874 Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-05-30 21:02:21.789 +07:00 [INF] 710ece24-7684-433a-a801-9aa8e7403874 AuthenticationScheme: Bearer was challenged.
+2025-05-30 21:02:21.790 +07:00 [INF] 710ece24-7684-433a-a801-9aa8e7403874 Request finished HTTP/1.1 POST http://localhost:5223/api/Product - 401 0 null 3.8967ms
+2025-05-30 21:02:22.439 +07:00 [INF] 9c6445b9-b860-454f-8b92-103f364758f2 Request starting HTTP/1.1 POST http://localhost:5223/api/Product - application/json 109
+2025-05-30 21:02:22.440 +07:00 [DBG] 9c6445b9-b860-454f-8b92-103f364758f2 Added CSP header: default-src 'self'; script-src 'self' 'nonce-CFbMkaTFAvLjVzRphoejYQ==' 'strict-dynamic'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https:; connect-src 'self'; media-src 'self'; object-src 'none'; child-src 'none'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; manifest-src 'self'; report-uri /api/security/csp-report;
+2025-05-30 21:02:22.441 +07:00 [INF] 9c6445b9-b860-454f-8b92-103f364758f2 CORS policy execution failed.
+2025-05-30 21:02:22.441 +07:00 [INF] 9c6445b9-b860-454f-8b92-103f364758f2 Request origin http://localhost:5223 does not have permission to access the resource.
+2025-05-30 21:02:22.441 +07:00 [DBG] 9c6445b9-b860-454f-8b92-103f364758f2 GetIdentifierAsync: No identifier found
+2025-05-30 21:02:22.442 +07:00 [INF] 9c6445b9-b860-454f-8b92-103f364758f2 Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-05-30 21:02:22.442 +07:00 [INF] 9c6445b9-b860-454f-8b92-103f364758f2 AuthenticationScheme: Bearer was challenged.
+2025-05-30 21:02:22.442 +07:00 [INF] 9c6445b9-b860-454f-8b92-103f364758f2 Request finished HTTP/1.1 POST http://localhost:5223/api/Product - 401 0 null 2.8788ms
+2025-05-30 21:02:29.918 +07:00 [INF] 1b8ec6d5-8b8a-40fb-9632-fa973ed80d6b Request starting HTTP/1.1 POST http://localhost:5223/api/Auth/register - application/json 152
+2025-05-30 21:02:29.919 +07:00 [DBG] 1b8ec6d5-8b8a-40fb-9632-fa973ed80d6b Added CSP header: default-src 'self'; script-src 'self' 'nonce-UMiTU+DXFxJbLCJWZhYyaA==' 'strict-dynamic'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https:; connect-src 'self'; media-src 'self'; object-src 'none'; child-src 'none'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; manifest-src 'self'; report-uri /api/security/csp-report;
+2025-05-30 21:02:29.920 +07:00 [INF] 1b8ec6d5-8b8a-40fb-9632-fa973ed80d6b CORS policy execution failed.
+2025-05-30 21:02:29.920 +07:00 [INF] 1b8ec6d5-8b8a-40fb-9632-fa973ed80d6b Request origin http://localhost:5223 does not have permission to access the resource.
+2025-05-30 21:02:29.921 +07:00 [DBG] 1b8ec6d5-8b8a-40fb-9632-fa973ed80d6b GetIdentifierAsync: No identifier found
+2025-05-30 21:02:29.921 +07:00 [INF] 1b8ec6d5-8b8a-40fb-9632-fa973ed80d6b Executing endpoint 'GenericAPI.Controllers.AuthController.Register (GenericAPI)'
+2025-05-30 21:02:29.943 +07:00 [INF] 1b8ec6d5-8b8a-40fb-9632-fa973ed80d6b Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[GenericAPI.DTOs.AuthResponseDto]] Register(GenericAPI.DTOs.RegisterRequestDto) on controller GenericAPI.Controllers.AuthController (GenericAPI).
+2025-05-30 21:02:30.197 +07:00 [INF] 1b8ec6d5-8b8a-40fb-9632-fa973ed80d6b Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType3`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-05-30 21:02:30.202 +07:00 [INF] 1b8ec6d5-8b8a-40fb-9632-fa973ed80d6b Executed action GenericAPI.Controllers.AuthController.Register (GenericAPI) in 255.7038ms
+2025-05-30 21:02:30.203 +07:00 [INF] 1b8ec6d5-8b8a-40fb-9632-fa973ed80d6b Executed endpoint 'GenericAPI.Controllers.AuthController.Register (GenericAPI)'
+2025-05-30 21:02:30.203 +07:00 [INF] 1b8ec6d5-8b8a-40fb-9632-fa973ed80d6b Request finished HTTP/1.1 POST http://localhost:5223/api/Auth/register - 400 null application/json; charset=utf-8 285.2486ms
+2025-05-30 21:02:37.601 +07:00 [DBG]  Executing HealthCheck collector HostedService.
+2025-05-30 21:02:37.628 +07:00 [INF]  Start processing HTTP request GET http://localhost:5223/health
+2025-05-30 21:02:37.628 +07:00 [INF]  Sending HTTP request GET http://localhost:5223/health
+2025-05-30 21:02:37.629 +07:00 [INF] 0a255096-8b1d-447c-a50d-1c5e2b8a6a46 Request starting HTTP/1.1 GET http://localhost:5223/health - null null
+2025-05-30 21:02:37.629 +07:00 [DBG] 0a255096-8b1d-447c-a50d-1c5e2b8a6a46 Added CSP header: default-src 'self'; script-src 'self' 'nonce-3KS02mUzbgRjlSwklSay3Q==' 'strict-dynamic'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https:; connect-src 'self'; media-src 'self'; object-src 'none'; child-src 'none'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; manifest-src 'self'; report-uri /api/security/csp-report;
+2025-05-30 21:02:37.629 +07:00 [DBG] 0a255096-8b1d-447c-a50d-1c5e2b8a6a46 GetIdentifierAsync: No identifier found
+2025-05-30 21:02:37.630 +07:00 [INF] 0a255096-8b1d-447c-a50d-1c5e2b8a6a46 Executing endpoint 'Health checks'
+2025-05-30 21:02:37.633 +07:00 [DBG] 0a255096-8b1d-447c-a50d-1c5e2b8a6a46 Redis health check passed - Ping: 2.5538ms
+2025-05-30 21:02:37.650 +07:00 [DBG] 0a255096-8b1d-447c-a50d-1c5e2b8a6a46 Database health check passed
+2025-05-30 21:02:37.651 +07:00 [INF] 0a255096-8b1d-447c-a50d-1c5e2b8a6a46 Executed endpoint 'Health checks'
+2025-05-30 21:02:37.651 +07:00 [INF] 0a255096-8b1d-447c-a50d-1c5e2b8a6a46 Request finished HTTP/1.1 GET http://localhost:5223/health - 200 null application/json; charset=utf-8 22.0369ms
+2025-05-30 21:02:37.653 +07:00 [INF]  Received HTTP response headers after 24.737ms - 200
+2025-05-30 21:02:37.653 +07:00 [INF]  End processing HTTP request after 25.2096ms - 200
+2025-05-30 21:02:37.655 +07:00 [ERR]  GetHealthReport threw an exception when trying to get report from /health configured with name API Health.
+System.Text.Json.JsonException: The JSON value could not be converted to HealthChecks.UI.Core.UIHealthReport. Path: $.totalDuration | LineNumber: 0 | BytePositionInLine: 422.
+ ---> System.InvalidOperationException: Cannot get the value of a token type 'Number' as a string.
+   at System.Text.Json.ThrowHelper.ThrowInvalidOperationException_ExpectedString(JsonTokenType tokenType)
+   at System.Text.Json.Serialization.Converters.TimeSpanConverter.Read(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.Converters.SmallObjectWithParameterizedConstructorConverter`5.TryRead[TArg](ReadStack& state, Utf8JsonReader& reader, JsonParameterInfo jsonParameterInfo, TArg& arg)
+   at System.Text.Json.Serialization.Converters.SmallObjectWithParameterizedConstructorConverter`5.ReadAndCacheConstructorArgument(ReadStack& state, Utf8JsonReader& reader, JsonParameterInfo jsonParameterInfo)
+   at System.Text.Json.Serialization.Converters.ObjectWithParameterizedConstructorConverter`1.ReadConstructorArgumentsWithContinuation(ReadStack& state, Utf8JsonReader& reader, JsonSerializerOptions options)
+   at System.Text.Json.Serialization.Converters.ObjectWithParameterizedConstructorConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   --- End of inner exception stack trace ---
+   at System.Text.Json.ThrowHelper.ReThrowWithPath(ReadStack& state, Utf8JsonReader& reader, Exception ex)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.ContinueDeserialize(ReadBufferState& bufferState, JsonReaderState& jsonReaderState, ReadStack& readStack, T& value)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.DeserializeAsync(Stream utf8Json, CancellationToken cancellationToken)
+   at System.Net.Http.Json.HttpContentJsonExtensions.ReadFromJsonAsyncCore[T](HttpContent content, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at HealthChecks.UI.Core.HostedService.HealthCheckReportCollector.GetHealthReportAsync(HealthCheckConfiguration configuration) in /_/src/HealthChecks.UI/Core/HostedService/HealthCheckReportCollector.cs:line 149
+2025-05-30 21:02:37.670 +07:00 [INF]  Notification is sent on same window time.
+2025-05-30 21:02:37.670 +07:00 [DBG]  HealthReportCollector - health report execution history saved.
+2025-05-30 21:02:37.680 +07:00 [DBG]  HealthReport history already exists and is in the same state, updating the values.
+2025-05-30 21:02:37.684 +07:00 [DBG]  HealthReportCollector has completed.
+2025-05-30 21:02:37.684 +07:00 [DBG]  HealthCheck collector HostedService executed successfully.
+2025-05-30 21:02:45.744 +07:00 [INF] f65d3307-3e87-4c60-8eae-b24393efff8e Request starting HTTP/1.1 POST http://localhost:5223/api/Auth/register - application/json 149
+2025-05-30 21:02:45.745 +07:00 [DBG] f65d3307-3e87-4c60-8eae-b24393efff8e Added CSP header: default-src 'self'; script-src 'self' 'nonce-m/2oJE5907TW0Inr96mFew==' 'strict-dynamic'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https:; connect-src 'self'; media-src 'self'; object-src 'none'; child-src 'none'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; manifest-src 'self'; report-uri /api/security/csp-report;
+2025-05-30 21:02:45.745 +07:00 [INF] f65d3307-3e87-4c60-8eae-b24393efff8e CORS policy execution failed.
+2025-05-30 21:02:45.745 +07:00 [INF] f65d3307-3e87-4c60-8eae-b24393efff8e Request origin http://localhost:5223 does not have permission to access the resource.
+2025-05-30 21:02:45.746 +07:00 [DBG] f65d3307-3e87-4c60-8eae-b24393efff8e GetIdentifierAsync: No identifier found
+2025-05-30 21:02:45.746 +07:00 [INF] f65d3307-3e87-4c60-8eae-b24393efff8e Executing endpoint 'GenericAPI.Controllers.AuthController.Register (GenericAPI)'
+2025-05-30 21:02:45.746 +07:00 [INF] f65d3307-3e87-4c60-8eae-b24393efff8e Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[GenericAPI.DTOs.AuthResponseDto]] Register(GenericAPI.DTOs.RegisterRequestDto) on controller GenericAPI.Controllers.AuthController (GenericAPI).
+2025-05-30 21:02:46.195 +07:00 [INF] f65d3307-3e87-4c60-8eae-b24393efff8e Executing OkObjectResult, writing value of type 'GenericAPI.DTOs.AuthResponseDto'.
+2025-05-30 21:02:46.203 +07:00 [INF] f65d3307-3e87-4c60-8eae-b24393efff8e Executed action GenericAPI.Controllers.AuthController.Register (GenericAPI) in 455.788ms
+2025-05-30 21:02:46.203 +07:00 [INF] f65d3307-3e87-4c60-8eae-b24393efff8e Executed endpoint 'GenericAPI.Controllers.AuthController.Register (GenericAPI)'
+2025-05-30 21:02:46.203 +07:00 [INF] f65d3307-3e87-4c60-8eae-b24393efff8e Request finished HTTP/1.1 POST http://localhost:5223/api/Auth/register - 200 null application/json; charset=utf-8 459.5493ms
+2025-05-30 21:03:03.145 +07:00 [INF] 69bc0666-50cf-438c-a484-6e717fad0412 Request starting HTTP/1.1 POST http://localhost:5223/api/Auth/login - application/json 57
+2025-05-30 21:03:03.145 +07:00 [DBG] 69bc0666-50cf-438c-a484-6e717fad0412 Added CSP header: default-src 'self'; script-src 'self' 'nonce-gL1N8jqucxMoAoDEA9zK5w==' 'strict-dynamic'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https:; connect-src 'self'; media-src 'self'; object-src 'none'; child-src 'none'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; manifest-src 'self'; report-uri /api/security/csp-report;
+2025-05-30 21:03:03.145 +07:00 [INF] 69bc0666-50cf-438c-a484-6e717fad0412 CORS policy execution failed.
+2025-05-30 21:03:03.146 +07:00 [INF] 69bc0666-50cf-438c-a484-6e717fad0412 Request origin http://localhost:5223 does not have permission to access the resource.
+2025-05-30 21:03:03.146 +07:00 [DBG] 69bc0666-50cf-438c-a484-6e717fad0412 GetIdentifierAsync: No identifier found
+2025-05-30 21:03:03.146 +07:00 [INF] 69bc0666-50cf-438c-a484-6e717fad0412 Executing endpoint 'GenericAPI.Controllers.AuthController.Login (GenericAPI)'
+2025-05-30 21:03:03.150 +07:00 [INF] 69bc0666-50cf-438c-a484-6e717fad0412 Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[GenericAPI.DTOs.AuthResponseDto]] Login(GenericAPI.DTOs.LoginRequestDto) on controller GenericAPI.Controllers.AuthController (GenericAPI).
+2025-05-30 21:03:03.476 +07:00 [INF] 69bc0666-50cf-438c-a484-6e717fad0412 Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType3`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-05-30 21:03:03.476 +07:00 [INF] 69bc0666-50cf-438c-a484-6e717fad0412 Executed action GenericAPI.Controllers.AuthController.Login (GenericAPI) in 326.3027ms
+2025-05-30 21:03:03.477 +07:00 [INF] 69bc0666-50cf-438c-a484-6e717fad0412 Executed endpoint 'GenericAPI.Controllers.AuthController.Login (GenericAPI)'
+2025-05-30 21:03:03.477 +07:00 [INF] 69bc0666-50cf-438c-a484-6e717fad0412 Request finished HTTP/1.1 POST http://localhost:5223/api/Auth/login - 401 null application/json; charset=utf-8 331.9034ms
+2025-05-30 21:03:07.695 +07:00 [DBG]  Executing HealthCheck collector HostedService.
+2025-05-30 21:03:07.700 +07:00 [INF]  Start processing HTTP request GET http://localhost:5223/health
+2025-05-30 21:03:07.700 +07:00 [INF]  Sending HTTP request GET http://localhost:5223/health
+2025-05-30 21:03:07.701 +07:00 [INF] 1528dc14-98f0-4f49-be6c-7f2f43af6167 Request starting HTTP/1.1 GET http://localhost:5223/health - null null
+2025-05-30 21:03:07.701 +07:00 [DBG] 1528dc14-98f0-4f49-be6c-7f2f43af6167 Added CSP header: default-src 'self'; script-src 'self' 'nonce-AMUdbaSnfDLmomAdDSqNag==' 'strict-dynamic'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https:; connect-src 'self'; media-src 'self'; object-src 'none'; child-src 'none'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; manifest-src 'self'; report-uri /api/security/csp-report;
+2025-05-30 21:03:07.701 +07:00 [DBG] 1528dc14-98f0-4f49-be6c-7f2f43af6167 GetIdentifierAsync: No identifier found
+2025-05-30 21:03:07.702 +07:00 [INF] 1528dc14-98f0-4f49-be6c-7f2f43af6167 Executing endpoint 'Health checks'
+2025-05-30 21:03:07.703 +07:00 [DBG] 1528dc14-98f0-4f49-be6c-7f2f43af6167 Redis health check passed - Ping: 0.9168ms
+2025-05-30 21:03:07.713 +07:00 [DBG] 1528dc14-98f0-4f49-be6c-7f2f43af6167 Database health check passed
+2025-05-30 21:03:07.714 +07:00 [INF] 1528dc14-98f0-4f49-be6c-7f2f43af6167 Executed endpoint 'Health checks'
+2025-05-30 21:03:07.714 +07:00 [INF] 1528dc14-98f0-4f49-be6c-7f2f43af6167 Request finished HTTP/1.1 GET http://localhost:5223/health - 200 null application/json; charset=utf-8 13.324ms
+2025-05-30 21:03:07.714 +07:00 [INF]  Received HTTP response headers after 14.0239ms - 200
+2025-05-30 21:03:07.714 +07:00 [INF]  End processing HTTP request after 14.2991ms - 200
+2025-05-30 21:03:07.718 +07:00 [ERR]  GetHealthReport threw an exception when trying to get report from /health configured with name API Health.
+System.Text.Json.JsonException: The JSON value could not be converted to HealthChecks.UI.Core.UIHealthReport. Path: $.totalDuration | LineNumber: 0 | BytePositionInLine: 425.
+ ---> System.InvalidOperationException: Cannot get the value of a token type 'Number' as a string.
+   at System.Text.Json.ThrowHelper.ThrowInvalidOperationException_ExpectedString(JsonTokenType tokenType)
+   at System.Text.Json.Serialization.Converters.TimeSpanConverter.Read(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.Converters.SmallObjectWithParameterizedConstructorConverter`5.TryRead[TArg](ReadStack& state, Utf8JsonReader& reader, JsonParameterInfo jsonParameterInfo, TArg& arg)
+   at System.Text.Json.Serialization.Converters.SmallObjectWithParameterizedConstructorConverter`5.ReadAndCacheConstructorArgument(ReadStack& state, Utf8JsonReader& reader, JsonParameterInfo jsonParameterInfo)
+   at System.Text.Json.Serialization.Converters.ObjectWithParameterizedConstructorConverter`1.ReadConstructorArgumentsWithContinuation(ReadStack& state, Utf8JsonReader& reader, JsonSerializerOptions options)
+   at System.Text.Json.Serialization.Converters.ObjectWithParameterizedConstructorConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   --- End of inner exception stack trace ---
+   at System.Text.Json.ThrowHelper.ReThrowWithPath(ReadStack& state, Utf8JsonReader& reader, Exception ex)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.ContinueDeserialize(ReadBufferState& bufferState, JsonReaderState& jsonReaderState, ReadStack& readStack, T& value)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.DeserializeAsync(Stream utf8Json, CancellationToken cancellationToken)
+   at System.Net.Http.Json.HttpContentJsonExtensions.ReadFromJsonAsyncCore[T](HttpContent content, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at HealthChecks.UI.Core.HostedService.HealthCheckReportCollector.GetHealthReportAsync(HealthCheckConfiguration configuration) in /_/src/HealthChecks.UI/Core/HostedService/HealthCheckReportCollector.cs:line 149
+2025-05-30 21:03:07.720 +07:00 [DBG]  HealthReportCollector - health report execution history saved.
+2025-05-30 21:03:07.725 +07:00 [DBG]  HealthReport history already exists and is in the same state, updating the values.
+2025-05-30 21:03:07.726 +07:00 [DBG]  HealthReportCollector has completed.
+2025-05-30 21:03:07.726 +07:00 [DBG]  HealthCheck collector HostedService executed successfully.
+2025-05-30 21:03:35.833 +07:00 [INF] 19d7b1fd-9645-4023-a894-828b945dd3ad Request starting HTTP/1.1 POST http://localhost:5223/api/Auth/login - application/json 63
+2025-05-30 21:03:35.833 +07:00 [DBG] 19d7b1fd-9645-4023-a894-828b945dd3ad Added CSP header: default-src 'self'; script-src 'self' 'nonce-0p2EmP8tV7xX51ZsXL7/PQ==' 'strict-dynamic'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https:; connect-src 'self'; media-src 'self'; object-src 'none'; child-src 'none'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; manifest-src 'self'; report-uri /api/security/csp-report;
+2025-05-30 21:03:35.833 +07:00 [INF] 19d7b1fd-9645-4023-a894-828b945dd3ad CORS policy execution failed.
+2025-05-30 21:03:35.833 +07:00 [INF] 19d7b1fd-9645-4023-a894-828b945dd3ad Request origin http://localhost:5223 does not have permission to access the resource.
+2025-05-30 21:03:35.834 +07:00 [DBG] 19d7b1fd-9645-4023-a894-828b945dd3ad GetIdentifierAsync: No identifier found
+2025-05-30 21:03:35.834 +07:00 [INF] 19d7b1fd-9645-4023-a894-828b945dd3ad Executing endpoint 'GenericAPI.Controllers.AuthController.Login (GenericAPI)'
+2025-05-30 21:03:35.834 +07:00 [INF] 19d7b1fd-9645-4023-a894-828b945dd3ad Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[GenericAPI.DTOs.AuthResponseDto]] Login(GenericAPI.DTOs.LoginRequestDto) on controller GenericAPI.Controllers.AuthController (GenericAPI).
+2025-05-30 21:03:36.104 +07:00 [INF] 19d7b1fd-9645-4023-a894-828b945dd3ad Executing OkObjectResult, writing value of type 'GenericAPI.DTOs.AuthResponseDto'.
+2025-05-30 21:03:36.105 +07:00 [INF] 19d7b1fd-9645-4023-a894-828b945dd3ad Executed action GenericAPI.Controllers.AuthController.Login (GenericAPI) in 270.5297ms
+2025-05-30 21:03:36.105 +07:00 [INF] 19d7b1fd-9645-4023-a894-828b945dd3ad Executed endpoint 'GenericAPI.Controllers.AuthController.Login (GenericAPI)'
+2025-05-30 21:03:36.105 +07:00 [INF] 19d7b1fd-9645-4023-a894-828b945dd3ad Request finished HTTP/1.1 POST http://localhost:5223/api/Auth/login - 200 null application/json; charset=utf-8 272.3267ms
+2025-05-30 21:03:37.732 +07:00 [DBG]  Executing HealthCheck collector HostedService.
+2025-05-30 21:03:37.733 +07:00 [INF]  Start processing HTTP request GET http://localhost:5223/health
+2025-05-30 21:03:37.733 +07:00 [INF]  Sending HTTP request GET http://localhost:5223/health
+2025-05-30 21:03:37.733 +07:00 [INF] 6d64bfad-1b9b-4b4d-8b41-9a7d885c24d1 Request starting HTTP/1.1 GET http://localhost:5223/health - null null
+2025-05-30 21:03:37.734 +07:00 [DBG] 6d64bfad-1b9b-4b4d-8b41-9a7d885c24d1 Added CSP header: default-src 'self'; script-src 'self' 'nonce-7N3goJfSuQU/6bara1FoyQ==' 'strict-dynamic'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https:; connect-src 'self'; media-src 'self'; object-src 'none'; child-src 'none'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; manifest-src 'self'; report-uri /api/security/csp-report;
+2025-05-30 21:03:37.734 +07:00 [DBG] 6d64bfad-1b9b-4b4d-8b41-9a7d885c24d1 GetIdentifierAsync: No identifier found
+2025-05-30 21:03:37.734 +07:00 [INF] 6d64bfad-1b9b-4b4d-8b41-9a7d885c24d1 Executing endpoint 'Health checks'
+2025-05-30 21:03:37.798 +07:00 [DBG] 6d64bfad-1b9b-4b4d-8b41-9a7d885c24d1 Redis health check passed - Ping: 29.7375ms
+2025-05-30 21:03:37.800 +07:00 [DBG] 6d64bfad-1b9b-4b4d-8b41-9a7d885c24d1 Database health check passed
+2025-05-30 21:03:37.818 +07:00 [INF] 6d64bfad-1b9b-4b4d-8b41-9a7d885c24d1 Executed endpoint 'Health checks'
+2025-05-30 21:03:37.818 +07:00 [INF] 6d64bfad-1b9b-4b4d-8b41-9a7d885c24d1 Request finished HTTP/1.1 GET http://localhost:5223/health - 200 null application/json; charset=utf-8 85.2684ms
+2025-05-30 21:03:37.820 +07:00 [INF]  Received HTTP response headers after 87.6589ms - 200
+2025-05-30 21:03:37.823 +07:00 [INF]  End processing HTTP request after 90.8006ms - 200
+2025-05-30 21:03:37.826 +07:00 [ERR]  GetHealthReport threw an exception when trying to get report from /health configured with name API Health.
+System.Text.Json.JsonException: The JSON value could not be converted to HealthChecks.UI.Core.UIHealthReport. Path: $.totalDuration | LineNumber: 0 | BytePositionInLine: 429.
+ ---> System.InvalidOperationException: Cannot get the value of a token type 'Number' as a string.
+   at System.Text.Json.ThrowHelper.ThrowInvalidOperationException_ExpectedString(JsonTokenType tokenType)
+   at System.Text.Json.Serialization.Converters.TimeSpanConverter.Read(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.Converters.SmallObjectWithParameterizedConstructorConverter`5.TryRead[TArg](ReadStack& state, Utf8JsonReader& reader, JsonParameterInfo jsonParameterInfo, TArg& arg)
+   at System.Text.Json.Serialization.Converters.SmallObjectWithParameterizedConstructorConverter`5.ReadAndCacheConstructorArgument(ReadStack& state, Utf8JsonReader& reader, JsonParameterInfo jsonParameterInfo)
+   at System.Text.Json.Serialization.Converters.ObjectWithParameterizedConstructorConverter`1.ReadConstructorArgumentsWithContinuation(ReadStack& state, Utf8JsonReader& reader, JsonSerializerOptions options)
+   at System.Text.Json.Serialization.Converters.ObjectWithParameterizedConstructorConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   --- End of inner exception stack trace ---
+   at System.Text.Json.ThrowHelper.ReThrowWithPath(ReadStack& state, Utf8JsonReader& reader, Exception ex)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.ContinueDeserialize(ReadBufferState& bufferState, JsonReaderState& jsonReaderState, ReadStack& readStack, T& value)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.DeserializeAsync(Stream utf8Json, CancellationToken cancellationToken)
+   at System.Net.Http.Json.HttpContentJsonExtensions.ReadFromJsonAsyncCore[T](HttpContent content, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at HealthChecks.UI.Core.HostedService.HealthCheckReportCollector.GetHealthReportAsync(HealthCheckConfiguration configuration) in /_/src/HealthChecks.UI/Core/HostedService/HealthCheckReportCollector.cs:line 149
+2025-05-30 21:03:37.830 +07:00 [INF]  Notification is sent on same window time.
+2025-05-30 21:03:37.830 +07:00 [DBG]  HealthReportCollector - health report execution history saved.
+2025-05-30 21:03:37.831 +07:00 [DBG]  HealthReport history already exists and is in the same state, updating the values.
+2025-05-30 21:03:37.832 +07:00 [DBG]  HealthReportCollector has completed.
+2025-05-30 21:03:37.832 +07:00 [DBG]  HealthCheck collector HostedService executed successfully.
+2025-05-30 21:03:59.368 +07:00 [INF] 46deecdf-e26d-4996-8f45-ee9bbba26eb7 Request starting HTTP/1.1 GET http://localhost:5223/api/Admin/dashboard - null null
+2025-05-30 21:03:59.369 +07:00 [DBG] 46deecdf-e26d-4996-8f45-ee9bbba26eb7 Added CSP header: default-src 'self'; script-src 'self' 'nonce-BuiN8EmvD8L97kqFshDy3A==' 'strict-dynamic'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https:; connect-src 'self'; media-src 'self'; object-src 'none'; child-src 'none'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; manifest-src 'self'; report-uri /api/security/csp-report;
+2025-05-30 21:03:59.369 +07:00 [DBG] 46deecdf-e26d-4996-8f45-ee9bbba26eb7 GetIdentifierAsync: No identifier found
+2025-05-30 21:03:59.369 +07:00 [INF] 46deecdf-e26d-4996-8f45-ee9bbba26eb7 Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-05-30 21:03:59.370 +07:00 [INF] 46deecdf-e26d-4996-8f45-ee9bbba26eb7 AuthenticationScheme: Bearer was challenged.
+2025-05-30 21:03:59.370 +07:00 [INF] 46deecdf-e26d-4996-8f45-ee9bbba26eb7 Request finished HTTP/1.1 GET http://localhost:5223/api/Admin/dashboard - 401 0 null 1.2723ms
+2025-05-30 21:04:04.955 +07:00 [INF] 7a1863c6-0670-4c1f-ad80-89ab2b934fcb Request starting HTTP/1.1 GET http://localhost:5223/api/Product/search - null null
+2025-05-30 21:04:04.955 +07:00 [DBG] 7a1863c6-0670-4c1f-ad80-89ab2b934fcb Added CSP header: default-src 'self'; script-src 'self' 'nonce-POBCTyRJLRp1BXUv3PFmRA==' 'strict-dynamic'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https:; connect-src 'self'; media-src 'self'; object-src 'none'; child-src 'none'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; manifest-src 'self'; report-uri /api/security/csp-report;
+2025-05-30 21:04:04.956 +07:00 [DBG] 7a1863c6-0670-4c1f-ad80-89ab2b934fcb GetIdentifierAsync: No identifier found
+2025-05-30 21:04:04.956 +07:00 [INF] 7a1863c6-0670-4c1f-ad80-89ab2b934fcb Executing endpoint 'GenericAPI.Controllers.ProductController.SearchProducts (GenericAPI)'
+2025-05-30 21:04:04.964 +07:00 [INF] 7a1863c6-0670-4c1f-ad80-89ab2b934fcb Route matched with {action = "SearchProducts", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[GenericAPI.DTOs.ProductDto]]] SearchProducts(System.String) on controller GenericAPI.Controllers.ProductController (GenericAPI).
+2025-05-30 21:04:04.970 +07:00 [INF] 7a1863c6-0670-4c1f-ad80-89ab2b934fcb Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-05-30 21:04:04.987 +07:00 [INF] 7a1863c6-0670-4c1f-ad80-89ab2b934fcb Executed action GenericAPI.Controllers.ProductController.SearchProducts (GenericAPI) in 23.0141ms
+2025-05-30 21:04:04.987 +07:00 [INF] 7a1863c6-0670-4c1f-ad80-89ab2b934fcb Executed endpoint 'GenericAPI.Controllers.ProductController.SearchProducts (GenericAPI)'
+2025-05-30 21:04:04.987 +07:00 [INF] 7a1863c6-0670-4c1f-ad80-89ab2b934fcb Request finished HTTP/1.1 GET http://localhost:5223/api/Product/search - 400 null application/problem+json; charset=utf-8 32.1857ms
+2025-05-30 21:04:07.834 +07:00 [DBG]  Executing HealthCheck collector HostedService.
+2025-05-30 21:04:07.835 +07:00 [INF]  Start processing HTTP request GET http://localhost:5223/health
+2025-05-30 21:04:07.835 +07:00 [INF]  Sending HTTP request GET http://localhost:5223/health
+2025-05-30 21:04:07.843 +07:00 [INF] a860a6d8-bae7-4119-82bc-f9be9f30e0b2 Request starting HTTP/1.1 GET http://localhost:5223/health - null null
+2025-05-30 21:04:07.843 +07:00 [DBG] a860a6d8-bae7-4119-82bc-f9be9f30e0b2 Added CSP header: default-src 'self'; script-src 'self' 'nonce-3Pvl/6Dmbd+xTs/hDEymUQ==' 'strict-dynamic'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https:; connect-src 'self'; media-src 'self'; object-src 'none'; child-src 'none'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; manifest-src 'self'; report-uri /api/security/csp-report;
+2025-05-30 21:04:07.844 +07:00 [DBG] a860a6d8-bae7-4119-82bc-f9be9f30e0b2 GetIdentifierAsync: No identifier found
+2025-05-30 21:04:07.844 +07:00 [INF] a860a6d8-bae7-4119-82bc-f9be9f30e0b2 Executing endpoint 'Health checks'
+2025-05-30 21:04:07.846 +07:00 [DBG] a860a6d8-bae7-4119-82bc-f9be9f30e0b2 Redis health check passed - Ping: 0.6781ms
+2025-05-30 21:04:07.898 +07:00 [DBG] a860a6d8-bae7-4119-82bc-f9be9f30e0b2 Database health check passed
+2025-05-30 21:04:07.902 +07:00 [INF] a860a6d8-bae7-4119-82bc-f9be9f30e0b2 Executed endpoint 'Health checks'
+2025-05-30 21:04:07.902 +07:00 [INF] a860a6d8-bae7-4119-82bc-f9be9f30e0b2 Request finished HTTP/1.1 GET http://localhost:5223/health - 200 null application/json; charset=utf-8 58.8886ms
+2025-05-30 21:04:07.902 +07:00 [INF]  Received HTTP response headers after 67.2443ms - 200
+2025-05-30 21:04:07.902 +07:00 [INF]  End processing HTTP request after 67.4719ms - 200
+2025-05-30 21:04:07.904 +07:00 [ERR]  GetHealthReport threw an exception when trying to get report from /health configured with name API Health.
+System.Text.Json.JsonException: The JSON value could not be converted to HealthChecks.UI.Core.UIHealthReport. Path: $.totalDuration | LineNumber: 0 | BytePositionInLine: 427.
+ ---> System.InvalidOperationException: Cannot get the value of a token type 'Number' as a string.
+   at System.Text.Json.ThrowHelper.ThrowInvalidOperationException_ExpectedString(JsonTokenType tokenType)
+   at System.Text.Json.Serialization.Converters.TimeSpanConverter.Read(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.Converters.SmallObjectWithParameterizedConstructorConverter`5.TryRead[TArg](ReadStack& state, Utf8JsonReader& reader, JsonParameterInfo jsonParameterInfo, TArg& arg)
+   at System.Text.Json.Serialization.Converters.SmallObjectWithParameterizedConstructorConverter`5.ReadAndCacheConstructorArgument(ReadStack& state, Utf8JsonReader& reader, JsonParameterInfo jsonParameterInfo)
+   at System.Text.Json.Serialization.Converters.ObjectWithParameterizedConstructorConverter`1.ReadConstructorArgumentsWithContinuation(ReadStack& state, Utf8JsonReader& reader, JsonSerializerOptions options)
+   at System.Text.Json.Serialization.Converters.ObjectWithParameterizedConstructorConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   --- End of inner exception stack trace ---
+   at System.Text.Json.ThrowHelper.ReThrowWithPath(ReadStack& state, Utf8JsonReader& reader, Exception ex)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.ContinueDeserialize(ReadBufferState& bufferState, JsonReaderState& jsonReaderState, ReadStack& readStack, T& value)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.DeserializeAsync(Stream utf8Json, CancellationToken cancellationToken)
+   at System.Net.Http.Json.HttpContentJsonExtensions.ReadFromJsonAsyncCore[T](HttpContent content, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at HealthChecks.UI.Core.HostedService.HealthCheckReportCollector.GetHealthReportAsync(HealthCheckConfiguration configuration) in /_/src/HealthChecks.UI/Core/HostedService/HealthCheckReportCollector.cs:line 149
+2025-05-30 21:04:07.905 +07:00 [DBG]  HealthReportCollector - health report execution history saved.
+2025-05-30 21:04:07.954 +07:00 [DBG]  HealthReport history already exists and is in the same state, updating the values.
+2025-05-30 21:04:07.954 +07:00 [DBG]  HealthReportCollector has completed.
+2025-05-30 21:04:07.954 +07:00 [DBG]  HealthCheck collector HostedService executed successfully.
+2025-05-30 21:04:09.032 +07:00 [INF] fdc4eecf-b6c1-449f-a631-4a7eae81e689 Request starting HTTP/1.1 GET http://localhost:5223/api/Product/search?term=test - null null
+2025-05-30 21:04:09.034 +07:00 [DBG] fdc4eecf-b6c1-449f-a631-4a7eae81e689 Added CSP header: default-src 'self'; script-src 'self' 'nonce-Z2LS0BqTn9qJSJeh19AR+A==' 'strict-dynamic'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https:; connect-src 'self'; media-src 'self'; object-src 'none'; child-src 'none'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; manifest-src 'self'; report-uri /api/security/csp-report;
+2025-05-30 21:04:09.042 +07:00 [DBG] fdc4eecf-b6c1-449f-a631-4a7eae81e689 GetIdentifierAsync: No identifier found
+2025-05-30 21:04:09.042 +07:00 [INF] fdc4eecf-b6c1-449f-a631-4a7eae81e689 Executing endpoint 'GenericAPI.Controllers.ProductController.SearchProducts (GenericAPI)'
+2025-05-30 21:04:09.043 +07:00 [INF] fdc4eecf-b6c1-449f-a631-4a7eae81e689 Route matched with {action = "SearchProducts", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[GenericAPI.DTOs.ProductDto]]] SearchProducts(System.String) on controller GenericAPI.Controllers.ProductController (GenericAPI).
+2025-05-30 21:04:09.079 +07:00 [INF] fdc4eecf-b6c1-449f-a631-4a7eae81e689 Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GenericAPI.DTOs.ProductDto, GenericAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-30 21:04:09.083 +07:00 [INF] fdc4eecf-b6c1-449f-a631-4a7eae81e689 Executed action GenericAPI.Controllers.ProductController.SearchProducts (GenericAPI) in 40.1653ms
+2025-05-30 21:04:09.083 +07:00 [INF] fdc4eecf-b6c1-449f-a631-4a7eae81e689 Executed endpoint 'GenericAPI.Controllers.ProductController.SearchProducts (GenericAPI)'
+2025-05-30 21:04:09.083 +07:00 [INF] fdc4eecf-b6c1-449f-a631-4a7eae81e689 Request finished HTTP/1.1 GET http://localhost:5223/api/Product/search?term=test - 200 null application/json; charset=utf-8 51.4238ms
+2025-05-30 21:04:17.186 +07:00 [INF] 596cd072-c9ad-4539-80b0-919770658bb2 Request starting HTTP/1.1 DELETE http://localhost:5223/api/Product/23 - null null
+2025-05-30 21:04:17.187 +07:00 [DBG] 596cd072-c9ad-4539-80b0-919770658bb2 Added CSP header: default-src 'self'; script-src 'self' 'nonce-uAiJ8jwl+1cjA3F+3TGx8g==' 'strict-dynamic'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https:; connect-src 'self'; media-src 'self'; object-src 'none'; child-src 'none'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; manifest-src 'self'; report-uri /api/security/csp-report;
+2025-05-30 21:04:17.187 +07:00 [INF] 596cd072-c9ad-4539-80b0-919770658bb2 CORS policy execution failed.
+2025-05-30 21:04:17.187 +07:00 [INF] 596cd072-c9ad-4539-80b0-919770658bb2 Request origin http://localhost:5223 does not have permission to access the resource.
+2025-05-30 21:04:17.187 +07:00 [DBG] 596cd072-c9ad-4539-80b0-919770658bb2 GetIdentifierAsync: No identifier found
+2025-05-30 21:04:17.188 +07:00 [INF] 596cd072-c9ad-4539-80b0-919770658bb2 Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-05-30 21:04:17.189 +07:00 [INF] 596cd072-c9ad-4539-80b0-919770658bb2 AuthenticationScheme: Bearer was challenged.
+2025-05-30 21:04:17.189 +07:00 [INF] 596cd072-c9ad-4539-80b0-919770658bb2 Request finished HTTP/1.1 DELETE http://localhost:5223/api/Product/23 - 401 0 null 2.6655ms
+2025-05-30 21:04:37.966 +07:00 [DBG]  Executing HealthCheck collector HostedService.
+2025-05-30 21:04:37.967 +07:00 [INF]  Start processing HTTP request GET http://localhost:5223/health
+2025-05-30 21:04:37.967 +07:00 [INF]  Sending HTTP request GET http://localhost:5223/health
+2025-05-30 21:04:37.967 +07:00 [INF] 27ac7a38-2f34-45cd-b7cb-3b8cf9480e2b Request starting HTTP/1.1 GET http://localhost:5223/health - null null
+2025-05-30 21:04:37.967 +07:00 [DBG] 27ac7a38-2f34-45cd-b7cb-3b8cf9480e2b Added CSP header: default-src 'self'; script-src 'self' 'nonce-XDEA1gQYIFlXeHFxK0fwzQ==' 'strict-dynamic'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https:; connect-src 'self'; media-src 'self'; object-src 'none'; child-src 'none'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; manifest-src 'self'; report-uri /api/security/csp-report;
+2025-05-30 21:04:37.968 +07:00 [DBG] 27ac7a38-2f34-45cd-b7cb-3b8cf9480e2b GetIdentifierAsync: No identifier found
+2025-05-30 21:04:37.968 +07:00 [INF] 27ac7a38-2f34-45cd-b7cb-3b8cf9480e2b Executing endpoint 'Health checks'
+2025-05-30 21:04:37.997 +07:00 [DBG] 27ac7a38-2f34-45cd-b7cb-3b8cf9480e2b Database health check passed
+2025-05-30 21:04:37.997 +07:00 [DBG] 27ac7a38-2f34-45cd-b7cb-3b8cf9480e2b Redis health check passed - Ping: 6.1053ms
+2025-05-30 21:04:38.000 +07:00 [INF] 27ac7a38-2f34-45cd-b7cb-3b8cf9480e2b Executed endpoint 'Health checks'
+2025-05-30 21:04:38.000 +07:00 [INF]  Received HTTP response headers after 32.8869ms - 200
+2025-05-30 21:04:38.000 +07:00 [INF]  End processing HTTP request after 33.0756ms - 200
+2025-05-30 21:04:38.000 +07:00 [INF] 27ac7a38-2f34-45cd-b7cb-3b8cf9480e2b Request finished HTTP/1.1 GET http://localhost:5223/health - 200 null application/json; charset=utf-8 32.7344ms
+2025-05-30 21:04:38.005 +07:00 [ERR]  GetHealthReport threw an exception when trying to get report from /health configured with name API Health.
+System.Text.Json.JsonException: The JSON value could not be converted to HealthChecks.UI.Core.UIHealthReport. Path: $.totalDuration | LineNumber: 0 | BytePositionInLine: 427.
+ ---> System.InvalidOperationException: Cannot get the value of a token type 'Number' as a string.
+   at System.Text.Json.ThrowHelper.ThrowInvalidOperationException_ExpectedString(JsonTokenType tokenType)
+   at System.Text.Json.Serialization.Converters.TimeSpanConverter.Read(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.Converters.SmallObjectWithParameterizedConstructorConverter`5.TryRead[TArg](ReadStack& state, Utf8JsonReader& reader, JsonParameterInfo jsonParameterInfo, TArg& arg)
+   at System.Text.Json.Serialization.Converters.SmallObjectWithParameterizedConstructorConverter`5.ReadAndCacheConstructorArgument(ReadStack& state, Utf8JsonReader& reader, JsonParameterInfo jsonParameterInfo)
+   at System.Text.Json.Serialization.Converters.ObjectWithParameterizedConstructorConverter`1.ReadConstructorArgumentsWithContinuation(ReadStack& state, Utf8JsonReader& reader, JsonSerializerOptions options)
+   at System.Text.Json.Serialization.Converters.ObjectWithParameterizedConstructorConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   --- End of inner exception stack trace ---
+   at System.Text.Json.ThrowHelper.ReThrowWithPath(ReadStack& state, Utf8JsonReader& reader, Exception ex)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.ContinueDeserialize(ReadBufferState& bufferState, JsonReaderState& jsonReaderState, ReadStack& readStack, T& value)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.DeserializeAsync(Stream utf8Json, CancellationToken cancellationToken)
+   at System.Net.Http.Json.HttpContentJsonExtensions.ReadFromJsonAsyncCore[T](HttpContent content, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at HealthChecks.UI.Core.HostedService.HealthCheckReportCollector.GetHealthReportAsync(HealthCheckConfiguration configuration) in /_/src/HealthChecks.UI/Core/HostedService/HealthCheckReportCollector.cs:line 149
+2025-05-30 21:04:38.007 +07:00 [INF]  Notification is sent on same window time.
+2025-05-30 21:04:38.008 +07:00 [DBG]  HealthReportCollector - health report execution history saved.
+2025-05-30 21:04:38.008 +07:00 [DBG]  HealthReport history already exists and is in the same state, updating the values.
+2025-05-30 21:04:38.008 +07:00 [DBG]  HealthReportCollector has completed.
+2025-05-30 21:04:38.008 +07:00 [DBG]  HealthCheck collector HostedService executed successfully.
