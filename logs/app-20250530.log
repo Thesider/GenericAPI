@@ -433,3 +433,30 @@ System.Text.Json.JsonException: The JSON value could not be converted to HealthC
 2025-05-30 21:04:38.008 +07:00 [DBG]  HealthReport history already exists and is in the same state, updating the values.
 2025-05-30 21:04:38.008 +07:00 [DBG]  HealthReportCollector has completed.
 2025-05-30 21:04:38.008 +07:00 [DBG]  HealthCheck collector HostedService executed successfully.
+2025-05-30 23:27:06.461 +07:00 [WRN]  Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-05-30 23:27:06.767 +07:00 [INF]  AUDIT_LOG: {"Id":"40a318f4-6813-4692-8eeb-2823dc214426","UserId":"System","UserName":"","Action":"ApplicationStarted","EntityType":"","EntityId":"","OldValues":null,"NewValues":null,"Details":"Application has started successfully","IpAddress":"","UserAgent":"","Timestamp":"2025-05-30T16:27:06.745099Z","Severity":"Information","Category":"SystemEvent","TenantId":null,"Hash":"Lyvd0IIA\u002BF9XuD1CCtmzp/8olIRe8gatAwOFwEVZCSg=","CorrelationId":null}
+2025-05-30 23:27:06.768 +07:00 [INF]  Audit: ApplicationStarted by System on : - Application has started successfully
+2025-05-30 23:27:06.768 +07:00 [INF]  Application started successfully
+2025-05-30 23:27:06.798 +07:00 [INF]  User profile is available. Using 'C:\Users\Bar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-05-30 23:27:06.805 +07:00 [INF]  Initializing UI Database
+2025-05-30 23:27:06.901 +07:00 [INF]  Saving healthchecks configuration to database
+2025-05-30 23:27:07.115 +07:00 [INF]  Now listening on: http://localhost:5223
+2025-05-30 23:27:07.139 +07:00 [DBG]  Executing HealthCheck collector HostedService.
+2025-05-30 23:27:07.249 +07:00 [INF]  Start processing HTTP request GET http://localhost:5223/health
+2025-05-30 23:27:07.251 +07:00 [INF]  Sending HTTP request GET http://localhost:5223/health
+2025-05-30 23:27:07.446 +07:00 [INF]  Application started. Press Ctrl+C to shut down.
+2025-05-30 23:27:07.447 +07:00 [INF]  Hosting environment: Development
+2025-05-30 23:27:07.447 +07:00 [INF]  Content root path: C:\Users\Bar\Desktop\PPJ\GenericAPI
+2025-05-30 23:27:07.538 +07:00 [INF] 66be397b-e6b7-44cd-adb0-944216b95a37 Request starting HTTP/1.1 GET http://localhost:5223/health - null null
+2025-05-30 23:27:07.589 +07:00 [INF] 44728a4a-c3a1-4813-a08f-1cf412b1158a Request starting HTTP/1.1 GET http://localhost:5223/swagger/v1/swagger.json - null null
+2025-05-30 23:27:07.592 +07:00 [DBG] 66be397b-e6b7-44cd-adb0-944216b95a37 Added CSP header: default-src 'self'; script-src 'self' 'nonce-rOxFQ13z42/zyqfrYuAB/A==' 'strict-dynamic'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https:; connect-src 'self'; media-src 'self'; object-src 'none'; child-src 'none'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; manifest-src 'self'; report-uri /api/security/csp-report;
+2025-05-30 23:27:07.594 +07:00 [WRN] 66be397b-e6b7-44cd-adb0-944216b95a37 Failed to determine the https port for redirect.
+2025-05-30 23:27:07.703 +07:00 [DBG] 66be397b-e6b7-44cd-adb0-944216b95a37 GetIdentifierAsync: No identifier found
+2025-05-30 23:27:07.709 +07:00 [INF] 66be397b-e6b7-44cd-adb0-944216b95a37 Executing endpoint 'Health checks'
+2025-05-30 23:27:08.058 +07:00 [DBG] 66be397b-e6b7-44cd-adb0-944216b95a37 Database health check passed
+2025-05-30 23:27:08.272 +07:00 [INF] 44728a4a-c3a1-4813-a08f-1cf412b1158a Request finished HTTP/1.1 GET http://localhost:5223/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 682.0327ms
+2025-05-30 23:27:16.554 +07:00 [ERR] 66be397b-e6b7-44cd-adb0-944216b95a37 Health check redis with status "Unhealthy" completed after 8802.7839ms with message 'null'
+StackExchange.Redis.RedisConnectionException: It was not possible to connect to the redis server(s). Error connecting right now. To allow this multiplexer to continue retrying until it's able to connect, use abortConnect=false in your connection string or AbortOnConnectFail=false; in your code.
+   at StackExchange.Redis.ConnectionMultiplexer.ConnectImplAsync(ConfigurationOptions configuration, TextWriter writer, Nullable`1 serverType) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 613
+   at HealthChecks.Redis.RedisHealthCheck.TimeoutAsync(Task`1 task, CancellationToken cancellationToken) in /_/src/HealthChecks.Redis/RedisHealthCheck.cs:line 124
+   at HealthChecks.Redis.RedisHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /_/src/HealthChecks.Redis/RedisHealthCheck.cs:line 54

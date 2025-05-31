@@ -14,6 +14,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using StackExchange.Redis;
+using DotNetEnv;
 using Serilog;
 using Serilog.Events;
 using Prometheus;
@@ -45,6 +46,9 @@ Log.Logger = new LoggerConfiguration()
 
 try
 {
+    // Load environment variables from .env file
+    Env.Load();
+    
     var builder = WebApplication.CreateBuilder(args);
 
     // Replace default logging with Serilog
