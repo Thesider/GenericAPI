@@ -25,6 +25,7 @@ using Microsoft.AspNetCore.SignalR;
 using Finbuckle.MultiTenant;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 
+
 // Configure Serilog early
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Debug()
@@ -50,6 +51,67 @@ try
     Env.Load();
     
     var builder = WebApplication.CreateBuilder(args);
+
+    // Add custom configuration to expand environment variables
+    builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+    builder.Configuration.AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true);
+    builder.Configuration.AddEnvironmentVariables();
+
+    // Create a new configuration with expanded environment variables
+    var expandedConfig = new ConfigurationBuilder();
+    foreach (var source in builder.Configuration.Sources)
+    {
+        expandedConfig.Add(source);
+    }
+    var tempConfig = expandedConfig.Build();
+
+    // Expand environment variables in configuration values
+    var expandedConfigData = new Dictionary<string, string?>();
+    foreach (var kvp in tempConfig.AsEnumerable())
+    {
+        if (kvp.Value != null && kvp.Value.Contains("${") && kvp.Value.Contains("}"))
+        {
+            var expandedValue = kvp.Value;
+            
+            // Handle nested environment variables (e.g., ${VAR1}_${VAR2})
+            int maxIterations = 10; // Prevent infinite loops
+            int iteration = 0;
+            
+            while (expandedValue.Contains("${") && expandedValue.Contains("}") && iteration < maxIterations)
+            {
+                var startIndex = expandedValue.IndexOf("${");
+                if (startIndex >= 0)
+                {
+                    var endIndex = expandedValue.IndexOf("}", startIndex);
+                    if (endIndex > startIndex)
+                    {
+                        var envVarName = expandedValue.Substring(startIndex + 2, endIndex - startIndex - 2);
+                        var envVarValue = Environment.GetEnvironmentVariable(envVarName) ?? "";
+                        expandedValue = expandedValue.Replace($"${{{envVarName}}}", envVarValue);
+                    }
+                    else
+                    {
+                        break; // Malformed variable, exit loop
+                    }
+                }
+                else
+                {
+                    break; // No more variables to expand
+                }
+                iteration++;
+            }
+            
+            expandedConfigData[kvp.Key] = expandedValue;
+        }
+        else
+        {
+            expandedConfigData[kvp.Key] = kvp.Value;
+        }
+    }
+
+    // Replace the configuration with the expanded version
+    builder.Configuration.Sources.Clear();
+    builder.Configuration.AddInMemoryCollection(expandedConfigData);
 
     // Replace default logging with Serilog
     builder.Host.UseSerilog();
@@ -253,19 +315,35 @@ try
     // Configure AutoMapper
     builder.Services.AddAutoMapper(typeof(Program));
 
-    // Configure CORS with enhanced security
-    builder.Services.AddCors(options =>
+    // Configure CORS with enhanced security - only for production
+    if (!builder.Environment.IsDevelopment())
     {
-        options.AddPolicy("DefaultPolicy", policy =>
+        builder.Services.AddCors(options =>
         {
-            var origins = builder.Configuration.GetSection("Cors:Origins").Get<string[]>() ?? Array.Empty<string>();
-            policy.WithOrigins(origins)
-                .AllowAnyHeader()
-                .AllowAnyMethod()
-                .AllowCredentials() // Required for SignalR
-                .SetPreflightMaxAge(TimeSpan.FromDays(1));
+            options.AddPolicy("DefaultPolicy", policy =>
+            {
+                var origins = builder.Configuration.GetSection("Cors:Origins").Get<string[]>() ?? Array.Empty<string>();
+                policy.WithOrigins(origins)
+                    .AllowAnyHeader()
+                    .AllowAnyMethod()
+                    .AllowCredentials() 
+                    .SetPreflightMaxAge(TimeSpan.FromDays(1));
+            });
         });
-    });
+    }
+    else
+    {
+        // Permissive CORS for development/testing
+        builder.Services.AddCors(options =>
+        {
+            options.AddPolicy("DevelopmentPolicy", policy =>
+            {
+                policy.AllowAnyOrigin()
+                    .AllowAnyHeader()
+                    .AllowAnyMethod();
+            });
+        });
+    }
 
     // Add Application Insights if configured
     if (!string.IsNullOrEmpty(builder.Configuration["ApplicationInsights:ConnectionString"]))
@@ -288,13 +366,16 @@ try
     }
 
     // Security and monitoring middleware (order matters!)
-    app.UseSecurityHeaders(options =>
+    if (!app.Environment.IsDevelopment())
     {
-        options.CSPReportUri = "/api/security/csp-report";
-        options.CustomHeaders.Add("X-API-Version", "1.0");
-    });
-
-    app.UseHttpsRedirection();
+        app.UseSecurityHeaders(options =>
+        {
+            options.CSPReportUri = "/api/security/csp-report";
+            options.CustomHeaders.Add("X-API-Version", "1.0");
+        });
+        
+        app.UseHttpsRedirection();
+    }
 
     // Add Prometheus metrics endpoint
     app.UseMetricServer("/metrics");
@@ -302,8 +383,16 @@ try
 
     // Enhanced middleware pipeline
     app.UseErrorHandling();
-    app.UseIpRateLimiting();
-    app.UseCors("DefaultPolicy");
+    
+    if (!app.Environment.IsDevelopment())
+    {
+        app.UseIpRateLimiting();
+        app.UseCors("DefaultPolicy");
+    }
+    else
+    {
+        app.UseCors("DevelopmentPolicy");
+    }
 
     // Multi-tenancy
     app.UseMultiTenant();
