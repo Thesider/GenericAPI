@@ -1,23 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+using GenericAPI.Models;
 using Microsoft.AspNetCore.Http;
 
 namespace GenericAPI.Services
 {
-    /// <summary>
-    /// File upload result model
-    /// </summary>
-    public class FileUploadResult
-    {
-        public bool Success { get; set; }
-        public string? FileName { get; set; }
-        public string? FilePath { get; set; }
-        public long FileSize { get; set; }
-        public string? Error { get; set; }
-        public string? Url { get; set; }
-    }
-
     /// <summary>
     /// Interface for file upload service operations
     /// </summary>

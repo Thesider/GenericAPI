@@ -1,3 +1,5 @@
+using GenericAPI.Models;
+
 namespace GenericAPI.Services.Interfaces;
 
 public interface IMetricsService
@@ -40,13 +42,4 @@ public interface IMetricsService
     // Health and availability
     void RecordHealthCheckResult(string healthCheckName, bool isHealthy, double durationMs);
     void RecordServiceAvailability(string serviceName, bool isAvailable);
-}
-
-public class MetricEntry
-{
-    public string Name { get; set; } = string.Empty;
-    public double Value { get; set; }
-    public Dictionary<string, string> Tags { get; set; } = new();
-    public DateTime Timestamp { get; set; } = DateTime.UtcNow;
-    public string Type { get; set; } = "Gauge"; // Counter, Gauge, Histogram, Summary
 }

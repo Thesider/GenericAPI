@@ -18,6 +18,8 @@ using DotNetEnv;
 using Serilog;
 using Serilog.Events;
 using Prometheus;
+
+using FluentValidation;
 using FluentValidation.AspNetCore;
 using AspNetCoreRateLimit;
 using MediatR;
@@ -117,15 +119,13 @@ try
     builder.Host.UseSerilog();
 
     // Test database connection
-    await DatabaseConnectionTest.TestConnection();
-
-    // Add services to the container
-    builder.Services.AddControllers()
-        .AddFluentValidation(fv => 
-        {
-            fv.RegisterValidatorsFromAssemblyContaining<Program>();
-            fv.DisableDataAnnotationsValidation = false;
-        });
+    await DatabaseConnectionTest.TestConnection();    // Add services to the container
+    builder.Services.AddControllers();
+    
+    // Add FluentValidation services
+    builder.Services.AddFluentValidationAutoValidation();
+    builder.Services.AddFluentValidationClientsideAdapters();
+    builder.Services.AddValidatorsFromAssemblyContaining<Program>();
 
     builder.Services.AddEndpointsApiExplorer();
 
@@ -157,7 +157,7 @@ try
     builder.Services.AddMemoryCache();
 
     // Add MediatR for event-driven architecture
-    builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
+    builder.Services.AddMediatR(typeof(Program));
 
     // Add SignalR for real-time features
     builder.Services.AddSignalR(options =>

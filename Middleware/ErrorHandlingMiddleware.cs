@@ -53,7 +53,7 @@ public class ErrorHandlingMiddleware
         
         var newCorrelationId = Guid.NewGuid().ToString();
         context.Items["CorrelationId"] = newCorrelationId;
-        context.Response.Headers.Add(correlationIdHeaderName, newCorrelationId);
+        context.Response.Headers.Append(correlationIdHeaderName, newCorrelationId);
         
         return newCorrelationId;
     }

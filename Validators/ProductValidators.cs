@@ -14,12 +14,10 @@ public class CreateProductDtoValidator : AbstractValidator<CreateProductDto>
 
         RuleFor(x => x.Description)
             .NotEmpty().WithMessage("Product description is required")
-            .Length(10, 1000).WithMessage("Product description must be between 10 and 1000 characters");
-
-        RuleFor(x => x.Price)
+            .Length(10, 1000).WithMessage("Product description must be between 10 and 1000 characters");        RuleFor(x => x.Price)
             .GreaterThan(0).WithMessage("Price must be greater than 0")
             .LessThan(1000000).WithMessage("Price must be less than 1,000,000")
-            .ScalePrecision(2, 18).WithMessage("Price can have maximum 2 decimal places");
+            .PrecisionScale(18, 2, false).WithMessage("Price can have maximum 2 decimal places");
 
         RuleFor(x => x.StockQuantity)
             .GreaterThanOrEqualTo(0).WithMessage("Stock quantity cannot be negative")
@@ -51,12 +49,10 @@ public class UpdateProductDtoValidator : AbstractValidator<UpdateProductDto>
 
         RuleFor(x => x.Description)
             .Length(10, 1000).WithMessage("Product description must be between 10 and 1000 characters")
-            .When(x => !string.IsNullOrEmpty(x.Description));
-
-        RuleFor(x => x.Price)
+            .When(x => !string.IsNullOrEmpty(x.Description));        RuleFor(x => x.Price)
             .GreaterThan(0).WithMessage("Price must be greater than 0")
             .LessThan(1000000).WithMessage("Price must be less than 1,000,000")
-            .ScalePrecision(2, 18).WithMessage("Price can have maximum 2 decimal places")
+            .PrecisionScale(18, 2, false).WithMessage("Price can have maximum 2 decimal places")
             .When(x => x.Price.HasValue);
 
         RuleFor(x => x.StockQuantity)

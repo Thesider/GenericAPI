@@ -3,6 +3,8 @@ using System.Text;
 using System.Text.Json;
 using GenericAPI.Data;
 using GenericAPI.Services.Interfaces;
+using GenericAPI.Models;
+using GenericAPI.Enums;
 using Microsoft.EntityFrameworkCore;
 
 namespace GenericAPI.Services.Implementations;

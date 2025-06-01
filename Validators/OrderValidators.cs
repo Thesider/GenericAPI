@@ -53,9 +53,9 @@ public class UpdateOrderStatusDtoValidator : AbstractValidator<UpdateOrderStatus
             .Must(BeValidStatus).WithMessage($"Status must be one of: {string.Join(", ", _validStatuses)}");
     }
 
-    private bool BeValidStatus(string status)
+    private bool BeValidStatus(string? status)
     {
-        return _validStatuses.Contains(status, StringComparer.OrdinalIgnoreCase);
+        return !string.IsNullOrEmpty(status) && _validStatuses.Contains(status, StringComparer.OrdinalIgnoreCase);
     }
 }
 
@@ -92,8 +92,8 @@ public class OrderSearchCriteriaDtoValidator : AbstractValidator<OrderSearchCrit
             .When(x => x.MaxAmount.HasValue);
     }
 
-    private bool BeValidStatus(string status)
+    private bool BeValidStatus(string? status)
     {
-        return _validStatuses.Contains(status, StringComparer.OrdinalIgnoreCase);
+        return !string.IsNullOrEmpty(status) && _validStatuses.Contains(status, StringComparer.OrdinalIgnoreCase);
     }
 }

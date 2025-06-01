@@ -1,22 +1,7 @@
-using System.Collections.Generic;
-using System.Threading.Tasks;
+using GenericAPI.Models;
 
 namespace GenericAPI.Services
 {
-    /// <summary>
-    /// Email message model
-    /// </summary>
-    public class EmailMessage
-    {
-        public string To { get; set; } = string.Empty;
-        public string Subject { get; set; } = string.Empty;
-        public string Body { get; set; } = string.Empty;
-        public bool IsHtml { get; set; } = true;
-        public List<string> CC { get; set; } = new();
-        public List<string> BCC { get; set; } = new();
-        public Dictionary<string, byte[]> Attachments { get; set; } = new();
-    }
-
     /// <summary>
     /// Interface for email service operations
     /// </summary>
